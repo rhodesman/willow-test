@@ -5,7 +5,31 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+@mixin horizontal-align {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 @mixin border-radius($tL, $tR, $bR, $bL) {
   -webkit-border-radius: $tL $tR $bR $bL;
   border-radius: $tL $tR $bR $bL;
+}
+@mixin box-shadow($hL, $vL, $bR, $sP, $color) {
+  -webkit-box-shadow: $hL $vL $bR $sP $color;
+  box-shadow: $hL $vL $bR $sP $color;
+}
+@mixin transition($property, $easeTime) {
+  -webkit-transition: $property $easeTime ease-in-out;
+  -moz-transition: $property $easeTime ease-in-out;
+  -ms-transition: $property $easeTime ease-in-out;
+  -o-transition: $property $easeTime ease-in-out;
+  transition: $property $easeTime ease-in-out;
+}
+@mixin background-size ($sizeX, $sizeY) {
+  -moz-background-size: $sizeX $sizeY;
+  -o-background-size: $sizeX $sizeY;
+  -webkit-background-size: $sizeX $sizeY;
+  background-size: $sizeX $sizeY;
 }

@@ -16,28 +16,43 @@
         <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
     <body id="index-page">
-        <div class="container">
-            <header class="row">
-                <h1 class="small-12 medium-8 small-centered columns">
-                    WillowTree Employee Flip &amp; Match Game!
-                </h1>
-                <span class="game-instructions">
-                    <dl>
-                      <dt>Step 1</dt>
-                      <dd>Click on a card to reveal the employee's picture.</dd>
-                      <dt>Step 2</dt>
-                      <dd>Click on a second card to find the match.</dd>
-                    </dl>
-                </span>
-            </header>
-            <div <class="row">
-                <article class="small-12 medium-8 small-centered columns">
-                    <ul id="eGame" class="small-block-grid-2 large-block-grid-5">
+        <header class="container">
+          <div class="row">
+            <h1 class="small-12 medium-8 small-centered columns">
+                WillowTree Employee Flip &amp; Match Game!
+            </h1>
+            <div class="small-12 medium-6 small-centered columns">
+              <a href="#" class="button info tiny">View Instructions</a>
+              <dl class="game-instructions">
+                <dt>Step 1</dt>
+                <dd>Click on a card to reveal the employee's picture.</dd>
+                <dt>Step 2</dt>
+                <dd>Click on a second card to find the match.</dd>
+              </dl>
+            </div>
+          </div>
+        </header>
+        <div class="container game-table">
+            <div class="row">
+                <section class="small-12 small-centered columns">
+                    <ul id="eGame" class="small-block-grid-2 medium-block-grid-5">
                         <!--json cards are added here -->
                     </ul>
-                </article>
+                </section>
             </div>
         </div>
+        <footer class="container">
+          <div class="row">
+            <section class="small-12 medium-6 columns">
+              <div class="my-logo">
+                <h3>Created By Jason Rhodes</h3>
+                <span class="copy">Copyright 2015</span>
+              </div>
+            </section>
+            <section class="small-12 medium-6 columns">
+            </section>
+          </div>
+        </footer>
         <script src="js/app.js"></script>
     </body>
 </html>

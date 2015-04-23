@@ -73,3 +73,7 @@ $.ajax({
         });
     }
 });
+
+$('.button').click(function() {
+  $('.game-instructions').toggleClass('view-me');
+});
