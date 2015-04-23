@@ -22,7 +22,7 @@
                 WillowTree Employee Flip &amp; Match Game!
             </h1>
             <div class="small-12 medium-6 small-centered columns">
-              <a href="#" class="button info tiny">View Instructions</a>
+              <a href="#" class="button info tiny" id="instructions-button">View Instructions</a>
               <dl class="game-instructions">
                 <dt>Step 1</dt>
                 <dd>Click on a card to reveal the employee's picture.</dd>
@@ -53,6 +53,12 @@
             </section>
           </div>
         </footer>
+        <div id="youWon-modal" class="reveal-modal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <h2 id="modalTitle">Awesome, You Won!</h2>
+          <p>Are you ready for more?</p>
+          <a href="#" class="button info tiny" id="reload-game">Play Again!</a>
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
         <script src="js/app.js"></script>
     </body>
 </html>

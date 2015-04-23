@@ -23,13 +23,14 @@ $.ajax({
     url: 'http://namegame.willowtreemobile.com:2000',
     success: function(people) {
         shuffle(people); //shuffle the cards (don't want it to be easy now!)
-        var totalCards = 4; //set how many cards you want drawn
+        var totalCards = 4; //set how many cards you want drawn...minus one because computers are weird
         var peepID = 0; //create a unique ID for each card
         var eGroup = []; //create a new array with all built cards
         var numFlips = 0; // sets card flips to zero
         var cardA = null; //creates a card for comparing
         var cardB = null; //diddo!
         var timmerClock = 3000; //Set the delay for cards flipping back over
+        var totalMatches = 0; //create a counter for tracking matches
 
         //build the cards
         $.each(people, function(getPeeps, people) {
@@ -56,6 +57,7 @@ $.ajax({
                 $('.flipped').addClass('match');
                 $('.willow-card').delay(timmerClock).removeClass('flipped');
                 //alert('it is a match!');
+                totalMatches++;
                 numFlips = 0;
             } else {
                 cardB = cardA;
@@ -69,11 +71,18 @@ $.ajax({
                     cardB = null;
                 }
             }, timmerClock);
-
+            if(totalMatches > totalCards) {
+              $('#youWon-modal').foundation('reveal','open');
+              totalMatches = 0;
+            }
         });
+
     }
 });
 
-$('.button').click(function() {
+$('#instructions-button').click(function() {
   $('.game-instructions').toggleClass('view-me');
+});
+$('#reload-game').click(function(){
+  location.reload();
 });
