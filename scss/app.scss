@@ -10,6 +10,10 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
 @import "partials/mixins";
 
+body {
+  background: url('../images/icons-retina-scdc033139d-white.png') no-repeat -9999px -9999px;
+}
+
 header {
   background:#fff;
   @include box-shadow(0, 0, 20px, 10px, #d9d9d9);
