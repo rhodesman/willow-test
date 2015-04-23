@@ -29,7 +29,7 @@ $.ajax({
         var numFlips = 0; // sets card flips to zero
         var cardA = null; //creates a card for comparing
         var cardB = null; //diddo!
-        var timmerClock = 3000; //Set the delay for cards flipping back over
+        var timerClock = 3000; //Set the delay for cards flipping back over
         var totalMatches = 0; //create a counter for tracking matches
 
         //build the cards
@@ -55,7 +55,7 @@ $.ajax({
                 numFlips--;
             } else if(cardA === cardB) {
                 $('.flipped').addClass('match');
-                $('.willow-card').delay(timmerClock).removeClass('flipped');
+                $('.willow-card').delay(timerClock).removeClass('flipped');
                 //alert('it is a match!');
                 totalMatches++;
                 numFlips = 0;
@@ -66,13 +66,15 @@ $.ajax({
             setTimeout(function(){
                 if (numFlips >= 2) {
                     //alert('sorry, not a match');
-                    numFlips = 0;
-                    $('.willow-card').delay(timmerClock).removeClass('flipped');
+                    $('.willow-card').delay(timerClock).removeClass('flipped');
                     cardB = null;
+                    numFlips = 0;
                 }
-            }, timmerClock);
+            }, timerClock);
             if(totalMatches > totalCards) {
-              $('#youWon-modal').foundation('reveal','open');
+              setTimeout(function(){
+                $('#youWon-modal').foundation('reveal','open');
+              }, 1500);
               totalMatches = 0;
             }
         });
