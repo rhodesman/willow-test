@@ -3689,9 +3689,9 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "Employee-Test",
-	"displayValueWasSetByUser": 0,
-	"iconImageName": "globe_blue"
+	"displayValue": "Willow-Test",
+	"displayValueWasSetByUser": 1,
+	"iconImageName": "brackets_blue"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
