@@ -82,6 +82,11 @@ $.ajax({
 
 $('#instructions-button').click(function() {
   $('.game-instructions').toggleClass('view-me');
+  if ($('.game-instructions').hasClass('view-me')) {
+    $(this).text('Hide Instructions');
+  } else {
+    $(this).text('View Instructions');
+  }
 });
 $('#reload-game').click(function(){
   location.reload();
