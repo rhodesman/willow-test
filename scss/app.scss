@@ -1,0 +1,117 @@
+@import "settings";
+@import "foundation";
+@import "partials/mixins";
+
+#eGame li {
+  position: relative;
+  //z-index: 1;
+  perspective: 800;
+
+  .willow-card {
+    width: 100%;
+    height: 230px;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+    cursor: pointer;
+    transform: rotateY(0deg);
+    &.flipped, &.match {
+      transform: rotateY(180deg);
+    }
+    h2 {
+      position:relative;
+      font-size: 0.8rem;
+      text-align:center;
+      background-color: rgba(255,255,255,0.85);
+    }
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      @include border-radius(8px,8px,8px,8px);
+      &.front {
+        display: block;
+        position: relative;
+        transform: rotateY(180deg);
+        box-sizing: border-box;
+        padding: 10px;
+        color: white;
+        text-align: center;
+        background-color: #aaa;
+      }
+      &.back {
+        background-size:100% 100%;
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,0.43) url(http://www.willowtreeapps.com/wp-content/themes/wta-wordpress-theme/assets/images/bg/stripe-opacity26.png) !important;
+        color: #fff;
+        padding: 0em;
+        .willow-logo {
+          position:absolute;
+          height:100%;
+          width:100%;
+          &:before {
+            content:'';
+            @include vertical-align();
+            display:block;
+            margin: 0 auto;
+            width:60px;
+            height:60px;
+            backface-visibility: hidden;
+            background-image: url('http://www.willowtreeapps.com/wp-content/themes/wta-wordpress-theme/assets/images/gen/icons-retina-scdc033139d.png');
+            background-repeat: no-repeat;
+            -moz-background-size: 72px 1506px;
+            -o-background-size: 72px 1506px;
+            -webkit-background-size: 72px 1506px;
+            background-size: 72px 1506px;
+            background-position: 0 -1446px;
+          }
+        }
+      }
+    }
+  }
+  &:hover .face.back {
+      border:4px solid rgba(255,0,0,0.3);
+  }
+}
+
+
+
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
